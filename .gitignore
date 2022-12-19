@@ -2,3 +2,4 @@ venv
 .idea
 *.iml
 logs
+src/*/data/*
