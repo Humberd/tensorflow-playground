@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import os
+import os, shutil
 import json
 import cv2
 
-IMG_WIDTH=400
-IMG_HEIGHT=230
+IMG_WIDTH=50
+IMG_HEIGHT=50
 DATA_DIR = 'data'
 IMG_SAMPLES_DIR = os.path.join(DATA_DIR, 'samples')
 DATA_JOURNAL = os.path.join(DATA_DIR, 'journal.json')
@@ -13,6 +13,8 @@ DATA_JOURNAL = os.path.join(DATA_DIR, 'journal.json')
 def ensure_dir(path: str):
     if not os.path.exists(path):
         os.makedirs(path)
+    else:
+        shutil.rmtree(path)
 
 def save_json(obj, file_path: str):
     json_string = json.dumps(obj)
